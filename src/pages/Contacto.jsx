@@ -19,23 +19,51 @@ function Contacto() {
     });
   };
 
+  const obtenerFechaFormateada = () => {
+    const ahora = new Date();
+    const opciones = {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    };
+    return ahora.toLocaleString("es-ES", opciones);
+  };
+
+  const obtenerIP = async () => {
+    try {
+      const respuesta = await fetch("https://api.ipify.org?format=json");
+      const datos = await respuesta.json();
+      return datos.ip;
+    } catch {
+      return "Desconocida";
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
 
     try {
+      const ipUsuario = await obtenerIP();
+      const fecha = obtenerFechaFormateada();
+
       const { error } = await supabase
-        .from("contactos") // 👈 nombre de tu tabla en Supabase
+        .from("contactos")
         .insert([
           {
             nombre: formData.nombre,
             consulta: formData.consulta,
             mensaje: formData.mensaje,
             telefono: formData.telefono,
+            ip: ipUsuario,
+            fecha_formateada: fecha,
           },
         ]);
 
       if (error) throw error;
+
       setEnviado(true);
       setFormData({ nombre: "", consulta: "", mensaje: "", telefono: "" });
     } catch (err) {
