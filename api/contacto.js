@@ -37,9 +37,11 @@ export default async function handler(req, res) {
     });
 
     return res.status(200).json({ message: 'Datos guardados y correo enviado' });
+
   } catch (err) {
-    // Serializa el error de forma segura para evitar problemas de JSON
     console.error(err);
+
+    // Serializa el error para que React siempre reciba JSON válido
     return res.status(500).json({
       message: 'Error en el servidor',
       error: err?.message || String(err),
