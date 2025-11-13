@@ -20,21 +20,20 @@ function Contacto() {
 
   const obtenerFechaFormateada = () => {
     const ahora = new Date();
-    const opciones = {
+    return ahora.toLocaleString("es-ES", {
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
       hour: "2-digit",
       minute: "2-digit",
-    };
-    return ahora.toLocaleString("es-ES", opciones);
+    });
   };
 
   const obtenerIP = async () => {
     try {
-      const respuesta = await fetch("https://api.ipify.org?format=json");
-      const datos = await respuesta.json();
-      return datos.ip;
+      const res = await fetch("https://api.ipify.org?format=json");
+      const data = await res.json();
+      return data.ip;
     } catch {
       return "Desconocida";
     }
@@ -45,16 +44,22 @@ function Contacto() {
     setError(null);
 
     try {
-      const fecha = obtenerFechaFormateada();
+      const fecha_formateada = obtenerFechaFormateada();
       const ip = await obtenerIP();
 
       const response = await fetch("/api/contacto", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, ip, fecha_formateada: fecha }),
+        body: JSON.stringify({ ...formData, ip, fecha_formateada }),
       });
 
-      const data = await response.json();
+      // Aseguramos que la respuesta sea JSON
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        throw new Error("Error: el servidor no devolvió JSON válido");
+      }
 
       if (!response.ok) throw new Error(data.message || "Error desconocido");
 
