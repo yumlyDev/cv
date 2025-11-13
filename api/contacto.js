@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
 
-// Inicializa Resend y Supabase usando variables de entorno
+// Inicializa Resend y Supabase
 const resend = new Resend(process.env.RESEND_API_KEY);
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
 
     if (error) throw error;
 
-    // Envía el correo por Resend
+    // Envía correo por Resend
     try {
       await resend.emails.send({
         from: 'Formulario Web <info@yumly.es>',
@@ -37,13 +37,15 @@ export default async function handler(req, res) {
         `,
       });
     } catch (resendError) {
-      console.error('Error enviando correo con Resend:', resendError);
+      console.error('Error enviando correo:', resendError);
+      // Devuelve JSON aunque falle Resend
       return res.status(500).json({
-        message: 'Error al enviar correo',
+        message: 'Error guardando datos pero fallo al enviar correo',
         error: String(resendError),
       });
     }
 
+    // Todo OK
     return res.status(200).json({ message: 'Datos guardados y correo enviado' });
 
   } catch (err) {
