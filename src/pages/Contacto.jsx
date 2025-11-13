@@ -12,10 +12,7 @@ function Contacto() {
   const [error, setError] = useState(null);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const obtenerFechaFormateada = () => {
@@ -53,12 +50,11 @@ function Contacto() {
         body: JSON.stringify({ ...formData, ip, fecha_formateada }),
       });
 
-      // Aseguramos que la respuesta sea JSON
       let data;
       try {
         data = await response.json();
-      } catch (jsonError) {
-        throw new Error("Error: el servidor no devolvió JSON válido");
+      } catch {
+        throw new Error("El servidor no devolvió JSON válido");
       }
 
       if (!response.ok) throw new Error(data.message || "Error desconocido");
@@ -111,7 +107,7 @@ function Contacto() {
         />
         <br />
 
-        <label>Whatsapp: </label>
+        <label>Whatsapp:</label>
         <button
           type="button"
           onClick={() => window.open("https://wa.me/639253274", "_blank")}
