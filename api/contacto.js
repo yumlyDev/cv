@@ -21,27 +21,33 @@ export default async function handler(req, res) {
     if (error) throw error;
 
     // Envía el correo por Resend
-    await resend.emails.send({
-      from: 'Formulario Web <info@yumly.es>',
-      to: 'info@zoho.com',
-      subject: 'Nuevo mensaje desde tu web',
-      html: `
-        <h2>Nuevo mensaje recibido</h2>
-        <p><b>Nombre:</b> ${nombre}</p>
-        <p><b>Consulta:</b> ${consulta}</p>
-        <p><b>Mensaje:</b> ${mensaje}</p>
-        <p><b>Teléfono:</b> ${telefono}</p>
-        <p><b>IP:</b> ${ip}</p>
-        <p><b>Fecha:</b> ${fecha_formateada}</p>
-      `,
-    });
+    try {
+      await resend.emails.send({
+        from: 'Formulario Web <info@yumly.es>',
+        to: 'info@zoho.com',
+        subject: 'Nuevo mensaje desde tu web',
+        html: `
+          <h2>Nuevo mensaje recibido</h2>
+          <p><b>Nombre:</b> ${nombre}</p>
+          <p><b>Consulta:</b> ${consulta}</p>
+          <p><b>Mensaje:</b> ${mensaje}</p>
+          <p><b>Teléfono:</b> ${telefono}</p>
+          <p><b>IP:</b> ${ip}</p>
+          <p><b>Fecha:</b> ${fecha_formateada}</p>
+        `,
+      });
+    } catch (resendError) {
+      console.error('Error enviando correo con Resend:', resendError);
+      return res.status(500).json({
+        message: 'Error al enviar correo',
+        error: String(resendError),
+      });
+    }
 
     return res.status(200).json({ message: 'Datos guardados y correo enviado' });
 
   } catch (err) {
-    console.error(err);
-
-    // Serializa el error para que React siempre reciba JSON válido
+    console.error('Error en el servidor:', err);
     return res.status(500).json({
       message: 'Error en el servidor',
       error: err?.message || String(err),
