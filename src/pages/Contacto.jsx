@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { supabase } from "../supabaseClient";
 
 function Contacto() {
   const [formData, setFormData] = useState({
@@ -46,27 +45,23 @@ function Contacto() {
     setError(null);
 
     try {
-      const ipUsuario = await obtenerIP();
       const fecha = obtenerFechaFormateada();
+      const ip = await obtenerIP();
 
-      const { error } = await supabase
-        .from("contactos")
-        .insert([
-          {
-            nombre: formData.nombre,
-            consulta: formData.consulta,
-            mensaje: formData.mensaje,
-            telefono: formData.telefono,
-            ip: ipUsuario,
-            fecha_formateada: fecha,
-          },
-        ]);
+      const response = await fetch("/api/contacto", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, ip, fecha_formateada: fecha }),
+      });
 
-      if (error) throw error;
+      const data = await response.json();
+
+      if (!response.ok) throw new Error(data.message || "Error desconocido");
 
       setEnviado(true);
       setFormData({ nombre: "", consulta: "", mensaje: "", telefono: "" });
     } catch (err) {
+      console.error(err);
       setError(err.message);
     }
   };
