@@ -16,10 +16,10 @@ function App() {
       {/* Rutass */}
       <Routes>
         <Route path="/" element={<Inicio />} />
-        <Route path="/Acerca" element={<Acerca />} />
-        <Route path="/Contacto" element={<Contacto />} />
-        <Route path="/Estudios" element={<Estudios />} />
-        <Route path="/Experiencia" element={<Experiencia />} />
+        <Route path="/acerca" element={<Acerca />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/estudios" element={<Estudios />} />
+        <Route path="/experiencia" element={<Experiencia />} />
       </Routes>
     </BrowserRouter>
   );
