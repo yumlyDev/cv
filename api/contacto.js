@@ -25,7 +25,7 @@ export default async function handler(req, res) {
       await resend.emails.send({
         from: 'Formulario Web <info@yumly.es>',
         to: 'info@zoho.cominfo@yumly.es',
-        subject: 'Nuevo mensaje desde tu web',
+        subject: 'Nuevo mensaje desde tu web perro',
         html: `
           <h2>Nuevo mensaje recibido</h2>
           <p><b>Nombre:</b> ${nombre}</p>
