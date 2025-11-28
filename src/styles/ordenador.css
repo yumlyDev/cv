@@ -1,9 +1,45 @@
 @media (min-width: 1025px) {
-  body {
-    font-size: 18px;
-  }
-  .contenedor {
+  
+ html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  width: 100vw;       /* ocupa todo el ancho de la ventana */
+  overflow-x: hidden; /* evita scroll horizontal por elementos absolutos */
+  min-height: 100vh; /* ocupa al menos toda la ventana */
+  font-family: Montserrat;
+  line-height: 1.5;
+  font-weight: 600;
+  background: linear-gradient(rgba(192, 212, 255, 0.904), #eeaa68);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+  .patron{
     width: 100%;
-    margin: 0 auto;
   }
+  .patronimagen{
+    max-width: 100%;
+  }
+.fotonombre {
+  position: relative;
+  right: 10%;
+  margin-top: -50%;
+
+}
+.bloquefondo{
+  right: 100%;
+  top: 20%;
+
+  position: absolute;
+}
+.fondo{
+  position: relative;
+  align-items: center;
+
+}
 }
