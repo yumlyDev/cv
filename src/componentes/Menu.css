@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+DE+Grund:wght@300&display=swap');
 .menu {
   display: flex;
+  position:relative;
   width: 100%;
   align-items: center;
-  padding-right: 200px;
+  z-index: 10; /* debajo de todo */
+
 }
 .menu ul {
   list-style: none; /* quita puntos */
