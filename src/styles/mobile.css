@@ -1,46 +1,46 @@
 
 
 @media (max-width: 768px) {
- html, body {
-  height: 100%;
-  margin: 0;
-}
-
-#root {
-  width: 100vw;       /* ocupa todo el ancho de la ventana */
-  overflow-x: hidden; /* evita scroll horizontal por elementos absolutos */
-  min-height: 100vh; /* ocupa al menos toda la ventana */
-  font-family: Montserrat;
-  line-height: 1.5;
-  font-weight: 600;
-  background: linear-gradient(rgba(192, 212, 255, 0.904), #eeaa68);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-  .patron{
+  
+  html, body{
+    height: 100%;
     width: 100%;
+    margin: 0;
+    background: linear-gradient(rgba(192, 212, 255, 0.904), #eeaa68); /* seguirá ahí debajo */
+    font-family: Montserrat;
+    line-height: 1.5;
+    font-weight: 600;
+    overflow: hidden;
+   
   }
+
+  .patron {
+    position: absolute;   /* encima de todo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;      /* cubrir toda la pantalla */
+    top: -25px;
+    z-index: 0; /* debajo de todo */
+  }
+
   .patronimagen{
-    max-width: 100%;
+  width: 100%;
+  display: block;
+    z-index: 0; /* debajo de todo */
   }
 .fotonombre {
-  position: relative;
-  right: 10%;
-  margin-top: -50%;
-
-}
-.bloquefondo{
-  right: 100%;
-  top: 20%;
-
   position: absolute;
+  right: 50%;
+  top: 10%;
 }
-.fondo{
-  position: relative;
-  align-items: center;
 
+.bloquefondo{
+left: 60%;
 }
+.fondo {
+left: -50px;
+}
+
+  
 }

@@ -1,17 +1,15 @@
 import { Link } from "react-router-dom";
-import "./Menu.css"; // si quieres estilos separados
+import "./Menu.css";
 
 function Menu() {
   return (
     <nav className="menu">
       <ul>
-    <li><Link to="/">Inicio</Link></li>
-<li><Link to="/Acerca">Sobre mí</Link></li>
-<li><Link to="/Experiencia">Experiencia</Link></li>
-<li><Link to="/Estudios">Estudios</Link></li>
-<li><Link to="/Contacto">Contacto</Link></li>
-
-
+        <li><Link to="/">Inicio</Link></li>
+        <li><Link to="/acerca">Sobre mí</Link></li>
+        <li><Link to="/experiencia">Experiencia</Link></li>
+        <li><Link to="/estudios">Estudios</Link></li>
+        <li><Link to="/contacto">Contacto</Link></li>
       </ul>
     </nav>
   );

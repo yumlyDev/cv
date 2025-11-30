@@ -6,7 +6,7 @@ function Experiencia() {
           src="/patron.png"
           alt="patron circulos"
           className="patronimagen"
-        ></img>
+        ></img> </div>
         <div className="experiencia">
           <p>
             Técnico de sistemas con más de 5 años de experiencia en la
@@ -84,7 +84,7 @@ function Experiencia() {
             </table>
           </div>
         </div>
-      </div>
+     
     </div>
   );
 }

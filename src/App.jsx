@@ -10,10 +10,7 @@ import "./styles/App.css";
 function App() {
   return (
     <BrowserRouter>
-      {/* Menú de navegación */}
-      <Menu />
-
-      {/* Rutass */}
+      <Menu /> {/* Menú de navegación */}
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/acerca" element={<Acerca />} />

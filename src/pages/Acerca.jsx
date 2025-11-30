@@ -2,7 +2,8 @@ function Acerca() {
   return (
     <div>
       <div className="patron">
-          <img src="/patron.png" alt="patron circulos" className="patronimagen"></img> 
+          <img src="/patron.png" alt="patron circulos" className="patronimagen"></img>  
+          </div>
         <div className="descripcion">
           Soy Técnico en Sistemas especializado en Soporte Técnico Nivel 1 y
           Programador Junior, con experiencia en mantenimiento, diagnóstico y
@@ -23,7 +24,7 @@ function Acerca() {
           tanto en el área de soporte técnico como en la de desarrollo de
           software.
         </div>
-      </div>
+     
     </div>
   );
 }
