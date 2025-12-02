@@ -1,34 +1,46 @@
 /*
 *Experiencia
 */
-.experiencia {
-  margin-top: 5%;
-  width: 90%;
+
+.resumen {
+  background-color: #c0c9db;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 15%;
+  border-radius: 15px;
+  padding: 2%;
+  border: 1px solid black;
+  box-shadow: 3px 3px 15px 3px black;
+}
+.title1,
+.title2 {
+  display: grid;
+  background-color: #c0c9db; /* color inicial */
+  margin-top: 20px;
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 3px 0px 15px 1px black;
+  transition: background-color 0.3s ease, color 0.3s ease; /* animación */
+  cursor: pointer;
+  color: black; /* texto inicial */
 }
 
-.proyectos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+/* Hover para ambos */
+.title1:hover,
+.title2:hover {
+  background-color: #0f3781; /* fondo hover */
+  color: white; /* texto hover */
 }
 
-.title1 ul,
-.title2 ul,
-.title3 ul,
-.title4 ul {
-  margin: 10px 0 0 15px;
-  padding: 0;
-}
-
-.title1 h2,
-.title2 h2,
-.title3 h2,
-.title4 h2 {
-  margin-top: 0;
-  margin-bottom: 10px;
+/* Asegura que los hijos no tengan fondo que tape el hover */
+.title1 > *,
+.title2 > * {
+  background: transparent;
 }
 
 /*
