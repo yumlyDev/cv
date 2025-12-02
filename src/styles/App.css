@@ -1,81 +1,155 @@
-/*
+/*****************************************
+********* Estilos de movil ***************
+*****************************************/
+@media (max-width: 768px) {
+  .resumen {
+    background-color: #c0c9db;
+    text-align: center;
+    margin: 10% auto;
+    width: 90%;
+    border-radius: 15px;
+    padding: 2%;
+    border: 1px solid black;
+    box-shadow: 3px 3px 15px 3px black;
+  }
+
+  .title1,
+  .title2 {
+    display: grid;
+    background-color: #c0c9db;
+    margin: 20px auto;
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 3px 0px 15px 1px black;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    color: black;
+  }
+
+  .title1:hover,
+  .title2:hover {
+    background-color: #0f3781;
+    color: white;
+  }
+
+  .title1 > *,
+  .title2 > * {
+    background: transparent;
+  }
+
+  .descripcion {
+    max-width: 90%;
+    margin: 5% auto;
+    column-count: 1;
+    text-align: justify;
+    line-height: 1.6;
+  }
+}
+
+/*****************************************
+********* Estilos de Tablet **************
+******************************************/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .resumen {
+    width: 80%;
+  }
+
+  .title1,
+  .title2 {
+    width: 60%;
+  }
+
+  .descripcion {
+    max-width: 80%;
+    column-count: 1;
+  }
+}
+
+/*****************************************
+********* Estilos de PC ******************
+******************************************/
+@media (min-width: 1025px) {
+  /*
 *Experiencia
 */
 
-.resumen {
-  background-color: #c0c9db;
-  text-align: center;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 15%;
-  border-radius: 15px;
-  padding: 2%;
-  border: 1px solid black;
-  box-shadow: 3px 3px 15px 3px black;
-}
-.title1,
-.title2 {
-  display: grid;
-  background-color: #c0c9db; /* color inicial */
-  margin-top: 20px;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid black;
-  box-shadow: 3px 0px 15px 1px black;
-  transition: background-color 0.3s ease, color 0.3s ease; /* animación */
-  cursor: pointer;
-  color: black; /* texto inicial */
-}
+  .resumen {
+    background-color: #c0c9db;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 15%;
+    border-radius: 15px;
+    padding: 2%;
+    border: 1px solid black;
+    box-shadow: 3px 3px 15px 3px black;
+  }
+  .title1,
+  .title2 {
+    display: grid;
+    background-color: #c0c9db; /* color inicial */
+    margin-top: 20px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 3px 0px 15px 1px black;
+    transition: background-color 0.3s ease, color 0.3s ease; /* animación */
+    cursor: pointer;
+    color: black; /* texto inicial */
+  }
 
-/* Hover para ambos */
-.title1:hover,
-.title2:hover {
-  background-color: #0f3781; /* fondo hover */
-  color: white; /* texto hover */
-}
+  /* Hover para ambos */
+  .title1:hover,
+  .title2:hover {
+    background-color: #0f3781; /* fondo hover */
+    color: white; /* texto hover */
+  }
 
-/* Asegura que los hijos no tengan fondo que tape el hover */
-.title1 > *,
-.title2 > * {
-  background: transparent;
-}
+  /* Asegura que los hijos no tengan fondo que tape el hover */
+  .title1 > *,
+  .title2 > * {
+    background: transparent;
+  }
 
-/*
+  /*
 *Acerca de
 */
-.descripcion {
-  max-width: 900px;
-  margin: 5% auto;
-  column-count: 1;
-  text-align: justify;
-  line-height: 1.6;
-}
-.acerca-container {
-  position: relative;
-  font-family: Montserrat, sans-serif;
-  padding: 5% 10%;
-}
-
-.descripcion {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto;
-  color: #1a1a1a;
-  line-height: 1.6;
-}
-
-.descripcion ul {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 1025px) {
   .descripcion {
-    column-count: 2;
-    column-gap: 2rem;
+    max-width: 900px;
+    margin: 5% auto;
+    column-count: 1;
+    text-align: justify;
+    line-height: 1.6;
+  }
+  .acerca-container {
+    position: relative;
+    font-family: Montserrat, sans-serif;
+    padding: 5% 10%;
+  }
+
+  .descripcion {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+
+  .descripcion ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 1025px) {
+    .descripcion {
+      column-count: 2;
+      column-gap: 2rem;
+    }
   }
 }
