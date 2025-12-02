@@ -1,4 +1,37 @@
 /*
+*Experiencia
+*/
+.experiencia {
+  margin-top: 5%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.proyectos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.title1 ul,
+.title2 ul,
+.title3 ul,
+.title4 ul {
+  margin: 10px 0 0 15px;
+  padding: 0;
+}
+
+.title1 h2,
+.title2 h2,
+.title3 h2,
+.title4 h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/*
 *Acerca de
 */
 .descripcion {
@@ -11,7 +44,6 @@
 .acerca-container {
   position: relative;
   font-family: Montserrat, sans-serif;
-
   padding: 5% 10%;
 }
 
@@ -34,11 +66,4 @@
     column-count: 2;
     column-gap: 2rem;
   }
-}
-
-/*
-*Experiencia
-*/
-.experiencia {
-  margin-top: 10%;
 }

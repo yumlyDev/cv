@@ -1,46 +1,51 @@
-
-
 @media (max-width: 768px) {
-  
-  html, body{
+  html,
+  body {
     height: 100%;
     width: 100%;
     margin: 0;
-    background: linear-gradient(rgba(192, 212, 255, 0.904), #eeaa68); /* seguirá ahí debajo */
+    background: #e0eaff;
     font-family: Montserrat;
     line-height: 1.5;
     font-weight: 600;
     overflow: hidden;
-   
   }
 
   .patron {
-    position: absolute;   /* encima de todo */
+    position: absolute; /* encima de todo */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;      /* cubrir toda la pantalla */
+    height: 100%; /* cubrir toda la pantalla */
     top: -25px;
+    opacity: 0.4;
     z-index: 0; /* debajo de todo */
   }
-
-  .patronimagen{
-  width: 100%;
-  display: block;
+  .patronimagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     z-index: 0; /* debajo de todo */
   }
+}
 .fotonombre {
   position: absolute;
+  margin-top: 10%;
+  text-align: center;
   right: 50%;
   top: 10%;
 }
 
-.bloquefondo{
-left: 60%;
-}
-.fondo {
-left: -50px;
+.bloquefondo {
+  position: absolute;
 }
 
-  
+.fondo {
+  /*foto mia portada*/
+  position: relative;
+  height: 512px;
+  width: 512px;
+  margin-top: 40%;
+  left: 200%;
 }

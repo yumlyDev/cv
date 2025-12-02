@@ -5,18 +5,22 @@ import Acerca from "./pages/Acerca.jsx";
 import Contacto from "./pages/Contacto.jsx";
 import Estudios from "./pages/Estudios.jsx";
 import Experiencia from "./pages/Experiencia.jsx";
+import Sistemas from "./pages/Sistemas.jsx";
+import Desarrollador from "./pages/Desarrollador.jsx"; // ✔ corregido
 import "./styles/App.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <Menu /> {/* Menú de navegación */}
+      <Menu />
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/acerca" element={<Acerca />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/estudios" element={<Estudios />} />
         <Route path="/experiencia" element={<Experiencia />} />
+        <Route path="/sistemas" element={<Sistemas />} />
+        <Route path="/desarrollador" element={<Desarrollador />} />{" "}
       </Routes>
     </BrowserRouter>
   );

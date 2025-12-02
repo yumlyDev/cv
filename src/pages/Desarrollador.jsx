@@ -1,4 +1,4 @@
-function Experiencia() {
+function Desarrollador() {
   return (
     <div>
       <div className="patron">
@@ -78,4 +78,4 @@ function Experiencia() {
   );
 }
 
-export default Experiencia;
+export default Desarrollador;

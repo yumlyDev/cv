@@ -1,4 +1,4 @@
-function Experiencia() {
+function Sistemas() {
   return (
     <div>
       <div className="patron">
@@ -78,4 +78,4 @@ function Experiencia() {
   );
 }
 
-export default Experiencia;
+export default Sistemas;
