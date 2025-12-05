@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import patron from "../../assets/patron.png";
 function Contacto() {
   const [formData, setFormData] = useState({
     nombre: "",
@@ -69,6 +69,9 @@ function Contacto() {
 
   return (
     <div>
+      <div className="patron">
+        <img src={patron} alt="patron circulos" className="patronimagen"></img>
+      </div>
       <form onSubmit={handleSubmit}>
         <label>Nombre:</label>
         <input

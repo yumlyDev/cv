@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../supabaseClient";
+import { supabase } from "../../supabaseClient";
 
 function Panel() {
   const [mensajes, setMensajes] = useState([]);
@@ -18,6 +18,7 @@ function Panel() {
   return (
     <div style={{ padding: "2rem" }}>
       <h2>Mensajes recibidos</h2>
+
       <table border="1" cellPadding="6">
         <thead>
           <tr>

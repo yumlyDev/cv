@@ -10,7 +10,7 @@ function Menu() {
         </li>
 
         <li className="submenu-hover">
-          <Link to="/experiencia">Experiencia</Link>
+          <Link to="/resumen">Experiencia</Link>
 
           <ul className="submenu">
             <li>
