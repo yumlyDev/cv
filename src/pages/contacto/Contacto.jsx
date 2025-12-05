@@ -72,58 +72,60 @@ function Contacto() {
       <div className="patron">
         <img src={patron} alt="patron circulos" className="patronimagen"></img>
       </div>
-      <form onSubmit={handleSubmit}>
-        <label>Nombre:</label>
-        <input
-          type="text"
-          name="nombre"
-          value={formData.nombre}
-          onChange={handleChange}
-          required
-        />
-        <br />
+      <div className="title1">
+        <form onSubmit={handleSubmit}>
+          <label>Nombre:</label>
+          <input
+            type="text"
+            name="nombre"
+            value={formData.nombre}
+            onChange={handleChange}
+            required
+          />
+          <br />
 
-        <label>Consulta:</label>
-        <input
-          type="text"
-          name="consulta"
-          value={formData.consulta}
-          onChange={handleChange}
-        />
-        <br />
+          <label>Consulta:</label>
+          <input
+            type="text"
+            name="consulta"
+            value={formData.consulta}
+            onChange={handleChange}
+          />
+          <br />
 
-        <label>Mensaje:</label>
-        <textarea
-          name="mensaje"
-          value={formData.mensaje}
-          onChange={handleChange}
-          required
-        />
-        <br />
+          <label>Mensaje:</label>
+          <textarea
+            name="mensaje"
+            value={formData.mensaje}
+            onChange={handleChange}
+            required
+          />
+          <br />
 
-        <label>Teléfono:</label>
-        <input
-          type="number"
-          name="telefono"
-          value={formData.telefono}
-          onChange={handleChange}
-        />
-        <br />
+          <label>Teléfono:</label>
+          <input
+            type="number"
+            name="telefono"
+            value={formData.telefono}
+            onChange={handleChange}
+          />
+          <br />
 
-        <label>Whatsapp:</label>
-        <button
-          type="button"
-          onClick={() => window.open("https://wa.me/639253274", "_blank")}
-        >
-          Escríbeme por WhatsApp
-        </button>
-        <br />
+          <label>Whatsapp:</label>
+          <button
+            type="button"
+            onClick={() => window.open("https://wa.me/639253274", "_blank")}
+          >
+            Escríbeme por WhatsApp
+          </button>
+          <br />
 
-        <button type="submit">Enviar</button>
-      </form>
+          <button type="submit">Enviar</button>
+        </form>
 
-      {enviado && <p>✅ Mensaje enviado correctamente.</p>}
-      {error && <p style={{ color: "red" }}>❌ Error: {error}</p>}
+        {enviado && <p>✅ Mensaje enviado correctamente.</p>}
+        {error && <p style={{ color: "red" }}>❌ Error: {error}</p>}
+      </div>
     </div>
   );
 }
