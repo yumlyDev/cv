@@ -93,7 +93,7 @@ export default function RootLayout({
 
         <footer className="footer">
           <div className="container">
-            © {new Date().getFullYear()} Alejandro Herrera
+            © 2026 Alejandro Herrera
           </div>
         </footer>
       </body>
