@@ -5,12 +5,13 @@ import StackedScroll from "@/components/StackedScroll";
 const experience = [
   {
     period: "Ago. 2025 – actualidad",
-    role: "Desarrollador web y sistemas freelance",
+    role: "Administrador de sistemas y desarrollador web freelance",
     company: "Freelance · Train Movements Center",
     points: [
-      "Diseño y desarrollo de su nueva web con Next.js, React y CSS, desplegada en Vercel.",
+      "Securización de entornos en producción, backups semanales y migraciones de entorno.",
       "Limpieza de malware y recuperación de la web anterior en WordPress.",
-      "Mejoras SEO–SEM, backups semanales y migraciones de entorno.",
+      "Diseño y desarrollo de su nueva web con Next.js, React y CSS, desplegada en Vercel.",
+      "Mejoras SEO–SEM y propuestas proactivas de mejora para los sitios de los clientes.",
     ],
   },
   {
@@ -20,7 +21,8 @@ const experience = [
     points: [
       "Administración de proyectos Jira: workflows, roles, permisos, JQL y scripting con ScriptRunner (Groovy).",
       "Documentación en Confluence.",
-      "Administración de Jenkins: revisión de logs y monitorización de flujos.",
+      "Administración de Jenkins (revisión de logs y monitorización de flujos) y de contenedores Docker.",
+      "Monitorización de alertas con Grafana en diferentes pizarras.",
     ],
   },
   {
@@ -34,7 +36,20 @@ const experience = [
     ],
   },
 ];
-
+const projects = [
+  {
+    label: "Proyecto propio",
+    title: "Yumly Consulting",
+    url: "https://www.yumly.es",
+    text: "Consultoría IT y desarrollo web a medida para empresas y particulares: desarrollo con React y Next.js, soporte técnico, infraestructura y mantenimiento.",
+  },
+  {
+    label: "Cliente",
+    title: "Train Movements Center",
+    url: "https://www.trainmovementscenter.es",
+    text: "Nueva web con Next.js, React y CSS desplegada en Vercel, tras limpiar el malware de su WordPress anterior. Incluye las secciones de Rendimiento Deportivo y Valoración del Movimiento.",
+  },
+];
 const studies = [
   {
     period: "2023 – 2025",
@@ -52,22 +67,26 @@ const studies = [
 
 const skills = [
   {
-    group: "Desarrollo web",
-    items: ["Next.js", "React", "TypeScript", "CSS/SASS", "Vercel", "GitHub"],
+    group: "Sistemas",
+    items: ["Linux", "Windows", "VMware", "Docker", "SSH"],
   },
-  { group: "SEO / marketing", items: ["SEO técnico", "SEM", "Search Console"] },
-  { group: "Sistemas", items: ["Linux", "Windows", "VMware", "Docker", "SSH"] },
   {
-    group: "Gestión y soporte",
+    group: "Gestión y monitorización",
     items: [
       "Jira",
       "Confluence",
       "ScriptRunner",
       "Jenkins",
+      "Grafana",
       "ServiceNow",
       "Remedy",
     ],
   },
+  {
+    group: "Desarrollo web",
+    items: ["Next.js", "React", "TypeScript", "CSS/SASS", "Vercel", "GitHub"],
+  },
+  { group: "SEO / marketing", items: ["SEO técnico", "SEM", "Search Console"] },
 ];
 
 export default function Home() {
@@ -80,13 +99,13 @@ export default function Home() {
           <div>
             <h1 className="hero__title">Alejandro Herrera</h1>
             <p className="hero__subtitle">
-              Desarrollo web y SEO para centros deportivos y negocios que
-              quieren más visibilidad y más clientes.
+              Administrador de sistemas IT y desarrollador web: del servidor a
+              la web publicada.
             </p>
-                 <p className="hero__subtitle">
-             Disponible para proyectos y para incorporarme a un equipo
+            <p className="hero__availability">
+              Soporte N1-N3, entornos Windows y Linux, Atlassian y Next.js.
+              Disponible para incorporarme a un equipo o para proyectos.
             </p>
-            
             <div className="hero__actions">
               <a href="#experiencia" className="btn btn--primary">
                 Ver experiencia
@@ -94,14 +113,22 @@ export default function Home() {
               <a href="#contacto" className="btn btn--ghost">
                 Contactar
               </a>
-              <div className="hero__actions cv-actions">
-  <a href="/Cv Desarrollo alejandro.pdf" download className="btn btn--ghost">
-    CV desarrollo (PDF)
-  </a>
-  <a href="/Cv sistemas alejandro.pdf" download className="btn btn--ghost">
-    CV sistemas (PDF)
-  </a>
-</div>
+            </div>
+            <div className="hero__actions">
+              <a
+                href="/Cv_sistemas_alejandro.pdf"
+                download
+                className="btn btn--ghost"
+              >
+                CV sistemas (PDF)
+              </a>
+              <a
+                href="/Cv_Desarrollo_alejandro.pdf"
+                download
+                className="btn btn--ghost"
+              >
+                CV desarrollo (PDF)
+              </a>
             </div>
           </div>
           <Image
@@ -136,23 +163,46 @@ export default function Home() {
           </ol>
         </div>
       </section>
-
+<section id="proyectos" className="section" data-stack>
+  <div className="container">
+    <h2 className="section__title">Proyectos</h2>
+    <ol className="timeline">
+      {projects.map((p) => (
+        <li key={p.title} className="entry">
+          <p className="entry__period">{p.label}</p>
+          <div>
+            <h3 className="entry__title">{p.title}</h3>
+            <a
+              className="entry__link"
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {p.url.replace("https://", "")} ↗
+            </a>
+            <p className="entry__text">{p.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
       <section id="sobre-mi" className="section" data-stack>
         <div className="container">
           <h2 className="section__title">Sobre mí</h2>
           <div className="prose">
             <p>
-              Desarrollador web con base sólida en sistemas. Creo, rediseño y
-              mantengo sitios web con Next.js, React y CSS, y los combino con
-              estrategia SEO–SEM para que ganen visibilidad. Como freelance
-              desarrollé y publiqué en Vercel la nueva web de Train Movements
-              Center, tras limpiar el malware de su WordPress anterior.
+              Administrador de sistemas IT con experiencia en entornos Windows
+              y Linux, Cloud y On-Premise, y soporte técnico de nivel 1 a 3. He
+              administrado Jira y Confluence, Jenkins y VMware para clientes
+              como Orange y Santander Global Tech.
             </p>
             <p>
-              Vengo de entornos de producción exigentes: administré proyectos
-              Jira y Confluence, Jenkins y VMware para clientes como Orange y
-              Santander Global Tech, por eso cuido la seguridad, los backups y
-              las migraciones de cada proyecto.
+              Desde 2025 trabajo como freelance: aseguro entornos en
+              producción, gestiono backups y migraciones, y desarrollo webs con
+              Next.js, React y CSS. Publiqué en Vercel la nueva web de Train
+              Movements Center tras limpiar el malware de su WordPress
+              anterior.
             </p>
           </div>
           <div className="skills">
@@ -191,7 +241,6 @@ export default function Home() {
       </section>
 
       <section id="contacto" className="section section--contact" data-stack>
-        
         <div className="container">
           <h2 className="section__title">Contacto</h2>
           <p className="lead">

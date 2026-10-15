@@ -8,7 +8,6 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-// Sustituye por tu fuente display (o usa next/font/local si es propia)
 const italiana = Italiana({
   subsets: ["latin"],
   weight: "400",
@@ -16,16 +15,18 @@ const italiana = Italiana({
   display: "swap",
 });
 
+const title = "Alejandro Herrera · Administrador de sistemas y desarrollador web";
+const description =
+  "Administrador de sistemas IT y desarrollador web. Soporte N1-N3, entornos Windows y Linux, Jira y Confluence, y webs con Next.js.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://cv.yumly.es"),
-  title: "Alejandro Herrera · Desarrollo web y SEO",
-  description:
-    "Desarrollo web, consultoría y posicionamiento SEO para centros deportivos y negocios.",
+  title,
+  description,
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Alejandro Herrera · Desarrollo web y SEO",
-    description:
-      "Desarrollo web, consultoría y posicionamiento SEO para centros deportivos y negocios.",
+    title,
+    description,
     url: "/",
     siteName: "Alejandro Herrera",
     type: "website",
@@ -93,7 +94,7 @@ export default function RootLayout({
 
         <footer className="footer">
           <div className="container">
-            © 2026 Alejandro Herrera
+            © {new Date().getFullYear()} Alejandro Herrera
           </div>
         </footer>
       </body>
